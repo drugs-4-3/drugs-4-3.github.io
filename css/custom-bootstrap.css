@@ -1,0 +1,51 @@
+body {
+	background: url("../img/cork-wallet.png");
+}
+
+.page-header {
+	color: black;
+	text-align: center;
+	font-family: 'Knewave', cursive;
+	box-shadow: none;
+	margin: 20px 150px; 
+	
+}
+
+.page-header h1 {
+	font-size: 80px;
+	text-shadow: 3px 3px gray;
+}
+
+.jumbotron.main {
+	margin: 20px 50px;
+	padding: 20px;
+	border-radius: 20px;	
+}
+
+.task {
+	padding: 20px 10px;
+	width: 70%;
+	height: 30px;
+	line-height: 5px;
+	background: rgb(60, 60, 80);
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+	margin: auto;
+	margin-top: 10px;
+	text-align: center;
+	vertical-align: center;
+	font-family: 'ABeeZee', sans-serif;
+	font-size: 140%;
+}
+
+ul.task-list {
+	list-style-type: none;
+}
+
+li.task {
+	padding: 20px 10px;
+}
+
+
+

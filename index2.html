@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="./css/custom-bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Knewave" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
 </head>
 
 <body>
@@ -27,38 +28,13 @@
 		<ul class="task-list">
 		</ul>
 	</div>
-
-	<p>// TODO: usprawnic numeracje (poprawianie na biezaco przy usuwaniu elementow)</p>
+	<div class="text-center">
+		<button type="button" class="btn btn-secondary btn-lg text-center" id="clear_button">Clear all tasks!</button>
+	</div>
 
 	<script src="./js/jquery/jquery-3.1.1.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script>
-		$(document).ready(function() {
-			var counter = 1;
-			$("#inputer").keypress(function(e) {
-				if (e.which == 13) { // if eneter pressed
-					var input_value = $(this).val();
-					$(".task-list").append("<li class='task'>" + counter + ". " + input_value + "</li>");
-					$(this).val(''); // clear the input
-					counter++;
-				}
-			});
-			$(".task-list").on("click", ".task", function() {
-				$(this).slideToggle(100, function() {
-					$(this).remove();
-					counter--;
-				});
-			});
-			$(".task-list").on("mouseover", ".task", function() {
-				$(this).css("text-decoration", "line-through");
-				$(this).css("cursor", "pointer");
-			});
-			$(".task-list").on("mouseout", ".task", function() {
-				$(this).css("text-decoration", "none");
-			});
-
-		});
-	</script>
+	<script src="./js/scripts.js"></script>
 </body>
 </html>

@@ -25,6 +25,7 @@
 		</div>
 
 		<ul class="task-list">
+			<li class="task">1. Task1</li>
 		</ul>
 	</div>
 
@@ -36,12 +37,24 @@
 	<script>
 		$(document).ready(function() {
 			var counter = 1;
+			var tasks = new Array();
+
+			function decrement_task_index(task_text) {
+				var index_position = 18; // position at which index number occurs in html task code
+				var decremented_index = parseInt(task_text.charAt(index_position)) - 1;
+				return task_text.slice(0, 18) + decremented_index + task_text.slice(19);
+			}
+
+			document.write(decrement_task_index("<li class='task'>1. Task1</li>"));
+
 			$("#inputer").keypress(function(e) {
 				if (e.which == 13) { // if eneter pressed
 					var input_value = $(this).val();
-					$(".task-list").append("<li class='task'>" + counter + ". " + input_value + "</li>");
 					$(this).val(''); // clear the input
+					tasks.push({index: counter, value: input_value});
+					$(".task-list").append("<li class='task'>" + counter + ". " + input_value + "</li>"); // add task to display
 					counter++;
+
 				}
 			});
 			$(".task-list").on("click", ".task", function() {
